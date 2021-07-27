@@ -1,5 +1,6 @@
 {
     "name": "cryptstick/performs",
+    "version": "1.0.1",
     "description": "An perform package for wrap default laravel redirects & actions to custom with messages",
     "keywords": [
         "cryptstick",
