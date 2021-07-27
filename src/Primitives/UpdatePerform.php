@@ -55,7 +55,7 @@ abstract class UpdatePerform extends BasePerform
         if($this->authorized()) {
             if($this->checkInternal()) {
                 $model = $this->restore($this->getDataFromAnchor(
-                    PerformsFacade::anchor('transfer')
+                    PerformsFacade::anchor('id')
                 ));
 
                 if($model != null) {

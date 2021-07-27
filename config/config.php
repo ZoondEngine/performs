@@ -13,7 +13,7 @@ return [
         /**
          * Transfer anchor, sometimes contains identifier of model(for model bindings)
          */
-        'transfer' => 'id',
+        'id' => 'id',
 
         /**
          * Data anchor, contains custom data for UpdatePerform

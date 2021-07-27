@@ -43,7 +43,7 @@ abstract class DeletePerform extends BasePerform
                  */
                 $model = $this->restore(
                     $this->getDataFromAnchor(
-                        PerformsFacade::anchor('transfer')
+                        PerformsFacade::anchor('id')
                     )
                 );
 
