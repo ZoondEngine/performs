@@ -17,7 +17,7 @@ trait HasLifecycleDelegates
     /**
      * @throws BasePerformException
      */
-    protected function on(string $delegate, ...$params)
+    protected function on(string $delegate, array $params)
     {
         if($this->delegateCallable($delegate)) {
             $this->delegates[$delegate]->call($this, $params);
