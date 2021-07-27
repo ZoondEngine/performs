@@ -28,10 +28,10 @@ return [
                 'data'
             ],
             DeletePerform::class => [
-                'transfer'
+                'id'
             ],
             UpdatePerform::class => [
-                'transfer',
+                'id',
                 'data'
             ]
         ]
