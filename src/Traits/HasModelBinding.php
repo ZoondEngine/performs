@@ -11,7 +11,7 @@ trait HasModelBinding
     /**
      * @var string
      */
-    private $model = '';
+    protected $model = '';
 
     /**
      * @var Model
