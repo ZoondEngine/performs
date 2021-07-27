@@ -23,11 +23,6 @@ abstract class BasePerform implements IPerform
         HasNotifications;
 
     /**
-     * @var string
-     */
-    private $message = '';
-
-    /**
      * BasePerform constructor.
      */
     public function __construct()
@@ -62,27 +57,6 @@ abstract class BasePerform implements IPerform
          * Get notification data if used
          */
         return $response->with($this->getNotifyData());
-    }
-
-    /**
-     * @return RedirectResponse
-     * @throws BasePerformException
-     */
-    private function computeWithRedirects(): RedirectResponse
-    {
-        if(Route::has($this->getRedirectRoute())) {
-            if($this->shouldBeRedirected()) {
-                return redirect($this->getRedirectRoute());
-            }
-            else {
-                return back();
-            }
-        }
-        else {
-            throw new BasePerformException(
-                "Trying to redirect not exists route: {$this->getRedirectRoute()}"
-            );
-        }
     }
 
     /**
