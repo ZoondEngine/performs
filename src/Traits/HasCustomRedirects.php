@@ -23,7 +23,7 @@ trait HasCustomRedirects
         }
         else {
             throw new BasePerformException(
-                "Trying to redirect not exists route: {$this->getRedirectRoute()}"
+                "Trying to make redirect for not exists route: {$routeName}"
             );
         }
     }
