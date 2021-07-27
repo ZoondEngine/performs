@@ -25,7 +25,7 @@ class Performs
      */
     public function anchorFor(string $primitive): array
     {
-        return config('performs.anchors.default.' . $primitive, []);
+        return config('performs.anchors.defaults.' . $primitive, []);
     }
 
     /**
