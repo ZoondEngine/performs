@@ -36,7 +36,7 @@ trait HasLifecycleDelegates
     {
         $this->setupIfEmpty();
 
-        if(!$this->hasDelegate($delegate)) {
+        if(!$this->delegateCallable($delegate)) {
             $this->delegates[$delegate] = $closure;
         }
         else {
@@ -52,10 +52,21 @@ trait HasLifecycleDelegates
     private function setupIfEmpty()
     {
         if(count($this->delegates) <= 0) {
-            $this->delegates = array_merge(
+
+            /**
+             * Merge delegates
+             */
+            $forRegister = array_merge(
                 PerformsFacade::defaultDelegates(),
                 PerformsFacade::registeredDelegates()
             );
+
+            /**
+             * Adding delegates to array
+             */
+            foreach ($forRegister as $delegate) {
+                $this->delegates[$delegate] = null;
+            }
         }
     }
 
