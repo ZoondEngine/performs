@@ -10,7 +10,6 @@ use Cryptstick\Performs\Traits\HasNotifications;
 use Cryptstick\Performs\Traits\HasRequirements;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\MessageBag;
 
 /**
  * Class BasePerform
@@ -37,31 +36,6 @@ abstract class BasePerform implements IPerform
          * Registering the default message
          */
         $this->setDefaultMessage(PerformsFacade::defaultCompletedMessage());
-    }
-
-    /**
-     * @return string
-     */
-    protected function getMessage(): string
-    {
-        if($this->shouldUseDefaultMessage()) {
-            return $this->getDefaultMessage();
-        }
-
-        return $this->message;
-    }
-
-    /**
-     * @param string $message
-     */
-    protected function setMessage(string $message)
-    {
-        if(PerformsFacade::useLanguage()) {
-            $this->message = __($message);
-        }
-        else {
-            $this->message = $message;
-        }
     }
 
     /**

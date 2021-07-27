@@ -59,7 +59,7 @@ abstract class DeletePerform extends BasePerform
                          */
                         $this->call('after', $model, $data);
 
-                        $this->success($this->getMessage());
+                        $this->success($this->getDefaultMessage());
                     }
                     else {
                         $this->error('Resource dont deleted, maybe core error');
