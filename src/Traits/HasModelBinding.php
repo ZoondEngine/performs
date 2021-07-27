@@ -35,12 +35,17 @@ trait HasModelBinding
             return new $this->model;
         }
 
-        throw_if(
-            $this->model == '',
-            new BasePerformException("Cannot restore the empty model!")
-        );
+        if($this->model === '') {
+            throw new BasePerformException("Cannot restore the empty model!")
+        }
 
-        return $this->model::find($identifier);
+        $model = $this->model::find($identifier);
+
+        if($model == null) {
+            throw new BasePerformException("Model: $this->model not found!");
+        }
+
+        return $model;
     }
 
     /**
