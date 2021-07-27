@@ -2,6 +2,7 @@
 
 namespace Cryptstick\Performs\Traits;
 
+use Cryptstick\Performs\Exceptions\BasePerformException;
 use Illuminate\Support\Facades\Route;
 
 trait HasCustomRedirects
@@ -13,11 +14,17 @@ trait HasCustomRedirects
 
     /**
      * @param string $routeName
+     * @throws BasePerformException
      */
     protected function shouldRedirectTo(string $routeName)
     {
         if(Route::has($routeName)) {
             $this->redirectRoute = route($routeName);
+        }
+        else {
+            throw new BasePerformException(
+                "Trying to redirect not exists route: {$this->getRedirectRoute()}"
+            );
         }
     }
 
