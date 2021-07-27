@@ -31,9 +31,9 @@ class PerformsServiceProvider extends ServiceProvider
             /**
              * Publish language files
              */
-            $this->publishes([
-                __DIR__.'/../resources/lang' => resource_path('lang/vendor/performs'),
-            ], 'lang');
+            //$this->publishes([
+            //    __DIR__.'/../resources/lang' => resource_path('lang/vendor/performs'),
+            //], 'lang');
         }
     }
 
