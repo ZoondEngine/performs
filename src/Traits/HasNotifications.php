@@ -87,7 +87,7 @@ trait HasNotifications
          * Push notification
          */
         $this->messages->add(
-            $this->childClass(),
+            $this->detectClass(),
             PerformsFacade::useLanguage() ? __($message) : $message
         );
     }
@@ -119,7 +119,7 @@ trait HasNotifications
     /**
      * @return string
      */
-    protected function childClass(): string
+    protected function detectClass(): string
     {
         return last(explode('\\', get_class($this)));
     }

@@ -16,7 +16,7 @@ trait HasRequirements
      * @param array $data
      * @return bool
      */
-    protected function requires(array $data): bool
+    private function requires(array $data): bool
     {
         return Arr::has($data, $this->checkers);
     }

@@ -38,16 +38,17 @@ trait HasAnchorBinding
             throw new BasePerformException("Trying to get value from empty data array!");
         }
 
+        /* Check for fix
         $key = PerformsFacade::anchor($anchor);
 
         if($key === PerformsFacade::UNDEFINED_ANCHOR) {
             throw new BasePerformException("Trying to get undefined anchor: $anchor");
+        }*/
+
+        if(!Arr::has($this->dataWithAnchors, $anchor)) {
+            throw new BasePerformException("Received data array dont have a requested anchor offset: $anchor");
         }
 
-        if(!Arr::has($this->dataWithAnchors, $key)) {
-            throw new BasePerformException("Received data array dont have a requested anchor offset: $key");
-        }
-
-        return $this->dataWithAnchors[$key];
+        return $this->dataWithAnchors[$anchor];
     }
 }
