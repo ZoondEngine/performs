@@ -2,6 +2,8 @@
 
 namespace Cryptstick\Performs\Traits;
 
+use Illuminate\Support\Facades\Route;
+
 trait HasCustomRedirects
 {
     /**
@@ -14,7 +16,9 @@ trait HasCustomRedirects
      */
     protected function shouldRedirectTo(string $routeName)
     {
-        $this->redirectRoute = route($routeName);
+        if(Route::has($routeName)) {
+            $this->redirectRoute = route($routeName);
+        }
     }
 
     /**

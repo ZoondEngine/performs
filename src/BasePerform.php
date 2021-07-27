@@ -35,19 +35,11 @@ abstract class BasePerform implements IPerform
 
     /**
      * @return RedirectResponse
-     * @throws BasePerformException
      */
     protected function compute(): RedirectResponse
     {
         if($this->shouldBeRedirected()) {
-            if(Route::has($this->getRedirectRoute())) {
-                $response = redirect($this->getRedirectRoute());
-            }
-            else {
-                throw new BasePerformException(
-                    "Trying to redirect not exists route: {$this->getRedirectRoute()}"
-                );
-            }
+            $response = redirect($this->getRedirectRoute());
         }
         else {
             $response = back();
