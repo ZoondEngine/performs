@@ -1,11 +1,11 @@
 {
     "name": "cryptstick/performs",
-    "description": "An perform package for wrap default laravel redirects to custom with messages",
+    "description": "An perform package for wrap default laravel redirects & actions to custom with messages",
     "keywords": [
         "cryptstick",
         "performs"
     ],
-    "homepage": "https://github.com/cryptstick/performs",
+    "homepage": "https://github.com/ZoondEngine/performs",
     "license": "MIT",
     "type": "library",
     "authors": [
