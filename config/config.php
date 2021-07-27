@@ -25,7 +25,7 @@ return [
          */
         'defaults' => [
             CreatePerform::class => [
-                'transfer'
+                'data'
             ],
             DeletePerform::class => [
                 'transfer'
