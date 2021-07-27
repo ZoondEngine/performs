@@ -97,6 +97,6 @@ abstract class DeletePerform extends BasePerform
      */
     private function checkInternal(): bool
     {
-        return $this->check(CreatePerform::class, $this->getRawData());
+        return $this->check(DeletePerform::class, $this->getRawData());
     }
 }

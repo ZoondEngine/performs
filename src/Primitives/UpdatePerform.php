@@ -105,6 +105,6 @@ abstract class UpdatePerform extends BasePerform
      */
     private function checkInternal(): bool
     {
-        return $this->check(CreatePerform::class, $this->getRawData());
+        return $this->check(UpdatePerform::class, $this->getRawData());
     }
 }
