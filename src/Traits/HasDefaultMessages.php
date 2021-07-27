@@ -20,7 +20,7 @@ trait HasDefaultMessages
     /**
      * @return string
      */
-    public function getDefaultMessage(): string
+    protected function getDefaultMessage(): string
     {
         return $this->defaultMessage;
     }
@@ -28,7 +28,7 @@ trait HasDefaultMessages
     /**
      * @return bool
      */
-    public function shouldUseDefaultMessage(): bool
+    protected function shouldUseDefaultMessage(): bool
     {
         return $this->getDefaultMessage() !== '';
     }
