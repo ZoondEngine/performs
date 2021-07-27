@@ -25,7 +25,22 @@ class Performs
      */
     public function anchorFor(string $primitive): array
     {
-        return config('performs.anchors.defaults.' . $primitive, []);
+        $anchors = config('performs.anchors.defaults.' . $primitive, []);
+
+        if(count($anchors) > 0) {
+            $prepared = [];
+
+            /**
+             * Build anchor by keys
+             */
+            foreach($anchors as $anchor) {
+                $prepared[] = $this->anchor($anchor);
+            }
+
+            return $prepared;
+        }
+
+        return [];
     }
 
     /**
