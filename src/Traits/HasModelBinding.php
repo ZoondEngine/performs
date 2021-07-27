@@ -36,7 +36,7 @@ trait HasModelBinding
         }
 
         if($this->model === '') {
-            throw new BasePerformException("Cannot restore the empty model!")
+            throw new BasePerformException("Cannot restore the empty model!");
         }
 
         $model = $this->model::find($identifier);
