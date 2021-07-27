@@ -40,7 +40,7 @@ abstract class UpdatePerform extends BasePerform
     public function shouldUpdate(Closure $closure)
     {
         if(!$this->delegateCallable(self::SHOULD_UPDATE_DELEGATE)) {
-            $this->setup(self::SHOULD_UPDATE_DELEGATE, $closure);
+            $this->registerDelegate(self::SHOULD_UPDATE_DELEGATE, $closure);
         }
     }
 
@@ -63,7 +63,7 @@ abstract class UpdatePerform extends BasePerform
                         /**
                          * Use custom update if dont need use our primitive logic :(
                          */
-                        $this->on(self::SHOULD_UPDATE_DELEGATE, $model, $data);
+                        $this->on(self::SHOULD_UPDATE_DELEGATE, [$model, $data]);
                         $this->success($this->getDefaultMessage());
                     }
                     else {

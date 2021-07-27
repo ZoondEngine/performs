@@ -32,7 +32,7 @@ trait HasLifecycleDelegates
     /**
      * @throws BasePerformException
      */
-    protected function setup(string $delegate, Closure $closure)
+    protected function registerDelegate(string $delegate, Closure $closure)
     {
         $this->setupIfEmpty();
 
@@ -74,7 +74,7 @@ trait HasLifecycleDelegates
      * @param string $delegate
      * @return bool
      */
-    private function hasDelegate(string $delegate): bool
+    protected function hasDelegate(string $delegate): bool
     {
         return Arr::has($this->delegates, $delegate);
     }
@@ -83,7 +83,7 @@ trait HasLifecycleDelegates
      * @param string $delegate
      * @return bool
      */
-    private function delegateCallable(string $delegate): bool
+    protected function delegateCallable(string $delegate): bool
     {
         if($this->hasDelegate($delegate)) {
             return $this->delegates[$delegate] != null;
