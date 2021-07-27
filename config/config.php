@@ -13,12 +13,12 @@ return [
         /**
          * Transfer anchor, sometimes contains identifier of model(for model bindings)
          */
-        'id' => 'id',
+        'id' => 'identifier',
 
         /**
          * Data anchor, contains custom data for UpdatePerform
          */
-        'data' => 'data',
+        'data' => 'properties',
 
         /**
          * Default settings for perform primitives
