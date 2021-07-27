@@ -12,7 +12,7 @@ trait HasLifecycleDelegates
     /**
      * @var array
      */
-    private $delegates;
+    private $delegates = [];
 
     /**
      * @throws BasePerformException
