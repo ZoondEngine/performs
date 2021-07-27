@@ -23,7 +23,7 @@ class Performs
      * @param string $primitive
      * @return array
      */
-    public function anchorsFor(string $primitive): array
+    public function anchorFor(string $primitive): array
     {
         return config('performs.anchors.default.' . $primitive, []);
     }
