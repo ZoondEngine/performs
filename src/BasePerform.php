@@ -3,13 +3,12 @@
 namespace Cryptstick\Performs;
 
 use Cryptstick\Performs\Contracts\IPerform;
-use Cryptstick\Performs\Exceptions\BasePerformException;
 use Cryptstick\Performs\Traits\HasCustomRedirects;
 use Cryptstick\Performs\Traits\HasDefaultMessages;
+use Cryptstick\Performs\Traits\HasLocalStore;
 use Cryptstick\Performs\Traits\HasNotifications;
 use Cryptstick\Performs\Traits\HasRequirements;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Route;
 
 /**
  * Class BasePerform
@@ -20,7 +19,8 @@ abstract class BasePerform implements IPerform
     use HasCustomRedirects,
         HasDefaultMessages,
         HasRequirements,
-        HasNotifications;
+        HasNotifications,
+        HasLocalStore;
 
     /**
      * BasePerform constructor.
